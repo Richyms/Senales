@@ -1,0 +1,17 @@
+%% señal
+Fs=50; %Frecuencia de muestreo
+Ts=1/Fs; %Periodo de Muestreo
+L=26; %muestras
+%t=(0:L-1).*Ts; %vector tiempo
+t = importdata('t0.xlsx');
+x = importdata('datax.xlsx');
+y = importdata('datay.xlsx');
+subplot(2,2,2),plot(t,y),title('señales')
+subplot(2,2,1),plot(t,x),title('señales')
+%Y=fft(s);
+r=xcorr(x,y)
+%P1=2.*(abs(Y(1:L/2)/L));
+%plot(P1)
+%f=Fs.*(0:(L/2)-1)./L; % vector de frecuencia
+%plot(f,P1)
+subplot(2,1,2),plot(r),title('Correlacion')
